@@ -1,13 +1,21 @@
-import './App.css';
-import Header from './header/Header';
-import Tasks from './tasks/Tasks';
+import { Provider } from "react-redux";
+import "./App.css";
+import Footer from "./footer/Footer";
+import Header from "./header/Header";
+import Reducer from "./reducer/reducer";
+import Tasks from "./tasks/Tasks";
+import { legacy_createStore as createStore } from "redux";
 
 function App() {
+  const store = createStore(Reducer);
   return (
-    <div className="App">
-      <Header />
-      <Tasks />
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <Header />
+        <Tasks />
+        <Footer />
+      </div>
+    </Provider>
   );
 }
 

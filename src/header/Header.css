@@ -1,0 +1,30 @@
+
+.formAddTask{
+    display: flex;
+    align-items: center;
+    background-color: black;
+    border-radius: 20px;
+}
+.formAddTask >input{
+    border-radius: 20px;
+    padding: 10px 6px;
+    margin-right: 15px;
+    outline: none;
+    background-color: transparent;
+    border:none;
+    color: white;
+    
+}
+input::placeholder{
+    color: aliceblue;
+}
+.formAddTask >button{
+    border-radius: 20px;
+    text-align: center;
+    font-size: larger;
+    width: 35px;
+    height: 35px;
+    background-color: aliceblue;
+    border: black 2px solid ;
+    font-weight: bolder;
+}

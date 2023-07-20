@@ -1,0 +1,12 @@
+.containerTasks{
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    padding: 25px 15px ;
+    width: 65%;
+    max-height: 60vh;
+    overflow-x: auto;
+}
+
+
+

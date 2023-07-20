@@ -28,4 +28,4 @@
     ]
 
 
-    export {DataTasks} 
+    export {DataTasks}

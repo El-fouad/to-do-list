@@ -1,31 +1,25 @@
 import React, { useEffect, useState } from "react";
 import "./Task.css";
 import { DataTasks } from "../data";
+import { useDispatch } from "react-redux";
+import { checkedTaskAction } from "../actions/actions";
 
 function Task(props) {
-  const [isCheck, setisCheck] = useState(props.isChecked);
-  const [trashTask, setTrashTask] = useState();
-  useEffect(() => {
-    setisCheck(props.isChecked)
-
-    setTrashTask(isCheck ? { textDecoration: "line-through" } : null);
-    
-  },[isCheck]);
-  console.log('state lesss ',isCheck);
+  const dispatch = useDispatch()
   const handleChange = () => {
-    setisCheck(!isCheck);
+    dispatch(checkedTaskAction())
   };
   return (
     <>
       <div className="taskBody" >
-        <h5 style={trashTask} >{props.nameTask} </h5>
+        <h5 style={props.trashTask} >{props.nameTask} </h5>
         <div className="actions">
           <input
             type="checkbox"
             className="checkbox"
-            onChange={() => handleChange()}
+            onChange={() => handleChange(props.id)}
             onClick={props.onClick}
-            checked={isCheck}
+            checked={props.isChecked}
           />
           <button onClick={props.onClickDelete}>delete</button>
         </div>

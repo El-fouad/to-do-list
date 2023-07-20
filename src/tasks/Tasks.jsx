@@ -2,38 +2,34 @@ import React, { useEffect, useState } from "react";
 import "./Tasks.css";
 import Task from "../task/Task";
 import { DataTasks } from "../data";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteAction,checkedTaskAction } from "../actions/actions";
 
 function Tasks() {
-  const [task, setTask] = useState();
-  const [tasks, setTasks] = useState();
-  useEffect(() => {
-    setTasks(DataTasks);
-  },[]);
 
+  const dataReducer = useSelector(state=>state)
+  const dispatch = useDispatch()
+  
  
   const handleClick = (id)=>{
     
-    setTasks(tasks.map(ts=>{
-      return ts.id==id?{...ts,status:!ts.status}:ts
-    }))
-    
+    dispatch(checkedTaskAction(id))
   }
   const handleDeleteTask = (id)=>{
-    setTasks(tasks.filter(ts=>{
-      return ts.id!=id
-    }))
+    dispatch(deleteAction(id))
   }
   return (
     <>
       <div className="containerTasks">
-        {tasks ? tasks.map((tsk) => <Task 
+        {dataReducer[0] ? dataReducer.map((tsk) => <Task 
         nameTask={tsk.title}
         isChecked={tsk.status}
+        id={tsk.id}
+        trashTask={tsk.status ? { textDecoration: "line-through" } : null}
         onClick={()=>handleClick(tsk.id)}
         onClickDelete={()=>handleDeleteTask(tsk.id)}
         />
         ) : " no task"}
-        {console.log(tasks)}
       </div>
     </>
   );

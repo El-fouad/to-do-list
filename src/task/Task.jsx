@@ -3,6 +3,7 @@ import "./Task.css";
 import { DataTasks } from "../data";
 import { useDispatch } from "react-redux";
 import { checkedTaskAction } from "../actions/actions";
+import { BsFillTrash3Fill } from 'react-icons/bs';
 
 function Task(props) {
   const dispatch = useDispatch()
@@ -12,7 +13,7 @@ function Task(props) {
   return (
     <>
       <div className="taskBody" >
-        <h5 style={props.trashTask} >{props.nameTask} </h5>
+        <h3 style={props.trashTask} >{props.nameTask} </h3>
         <div className="actions">
           <input
             type="checkbox"
@@ -21,7 +22,7 @@ function Task(props) {
             onClick={props.onClick}
             checked={props.isChecked}
           />
-          <button onClick={props.onClickDelete}>delete</button>
+          <button onClick={props.onClickDelete}><BsFillTrash3Fill/></button>
         </div>
       </div>
     </>

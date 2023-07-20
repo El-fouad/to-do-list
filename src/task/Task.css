@@ -5,8 +5,9 @@
     margin-top: 15px;
     width: 90%;
     justify-content: space-between;
+    border-radius: 10px;
 }
-.taskBody>h5{
+.taskBody>h3{
     flex: auto;
 }
 .actions{
@@ -19,6 +20,12 @@ input[type='checkbox']{
     width: 30px;
     margin-right: 10px;
 }
-.actions button {
+.actions>button {
     height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background-color: red;
+    border: none;
 } 

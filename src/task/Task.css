@@ -1,0 +1,24 @@
+.taskBody{
+    display: flex;
+    background-color: aqua;
+    padding: 0 15px ;
+    margin-top: 15px;
+    width: 90%;
+    justify-content: space-between;
+}
+.taskBody>h5{
+    flex: auto;
+}
+.actions{
+    display: flex;
+    align-items: center;
+
+}
+input[type='checkbox']{
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+}
+.actions button {
+    height: 30px;
+} 

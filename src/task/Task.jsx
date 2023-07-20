@@ -27,7 +27,7 @@ function Task(props) {
             onClick={props.onClick}
             checked={isCheck}
           />
-          <button>delete</button>
+          <button onClick={props.onClickDelete}>delete</button>
         </div>
       </div>
     </>

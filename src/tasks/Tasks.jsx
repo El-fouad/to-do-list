@@ -18,6 +18,11 @@ function Tasks() {
     }))
     
   }
+  const handleDeleteTask = (id)=>{
+    setTasks(tasks.filter(ts=>{
+      return ts.id!=id
+    }))
+  }
   return (
     <>
       <div className="containerTasks">
@@ -25,6 +30,7 @@ function Tasks() {
         nameTask={tsk.title}
         isChecked={tsk.status}
         onClick={()=>handleClick(tsk.id)}
+        onClickDelete={()=>handleDeleteTask(tsk.id)}
         />
         ) : " no task"}
         {console.log(tasks)}

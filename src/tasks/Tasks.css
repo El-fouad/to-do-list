@@ -1,12 +1,15 @@
 .containerTasks{
-    background-color: aquamarine;
     display: flex;
     flex-direction: column;
     padding: 25px 15px ;
-    width: 65%;
+    width: 80%;
     max-height: 60vh;
     overflow-x: auto;
+    box-shadow: 0 10px #88888818;
 }
+.containerTasks::-webkit-scrollbar {
+    display: none;
+  }
 
 
 
